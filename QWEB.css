@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;800&family=Montserrat:wght@500&display=swap');
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    color: #fff;
+    background-color: #1100ff;
+    overflow: hidden;
+}
+
+/*------------------------------
+-------Main CSS---------------
+-------------------------------*/
+.main{
+    min-height: 100vh;
+    background:url(../Desktop/web01/background.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: .2s ease;
+}
+
+.main.active{
+    filter: blur(15px);
+}
+
+/*------------------------------
+-------Header CSS---------------
+-------------------------------*/
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+   
+}
+
+.logo{
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    filter: drop-shadow(0 0 5px black);
+    font-weight: 700;
+
+}
+
+.nav a{
+    font-size: 18px;
+    font-weight: 20px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: .2s;
+    color: rgb(255, 255, 255);
+}
+
+.nav  a:hover,
+.nav  a.active
+ {
+    color: #ff0080;
+}
+
+
+/*-----------------------------
+-------Container CSS-----------
+-------------------------------*/
+.container{
+    display: flex;
+    height: 100vh;
+    width:200%;
+}
+
+/*----------------------------
+-------Home CSS---------------
+-------------------------------*/
+
+.home{
+    height: 100vh;
+    width: 100%;
+    left: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-content{
+    max-width: 600px;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+}
+
+.home-content-quiz-website{
+    font-size: 55px;
+    text-align: center;
+    text-shadow: 0 0 10 rgba(0, 0, 0, 3);    
+    margin-bottom: 30px;
+    font-weight:1250px;
+}
+
+.home-content-details{
+    font-size: 15px;
+    text-align: center;
+    text-shadow: 0 0 10 rgba(0, 0, 0, 3);
+    margin-bottom: 30px;
+}
+
+.start-button{
+    
+    width:120px;
+    height: 50px;
+    background: #ff0080;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10 #ff0080;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.start-button:hover{
+    background: #4e0229;
+}
+
+/*------------------------------
+-------POP UP INFO CSS---------------
+-------------------------------*/
+
+.popup{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(.9);
+    width: 500px;
+    background: rgb(255, 255, 255);
+    padding: 10px 25px;   
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+    border-radius: 10px;
+}
+
+.popup.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%)scale(1);
+
+}
+
+.popup h2{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: #1100ff;
+}
+
+.popup .info{
+    display: inline-block;
+    font-size: 15px;
+    color: #0f0ce2;
+    font-weight:300;
+    margin: 4px 0;
+    font-weight:600;
+    
+}
+
+.popup .buttons{   
+    margin-top:20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.popup .buttons .info-button{
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    background: #ff0080;
+    border-radius: 6px;
+    border: 2px solid #ff0080;
+    outline: none;
+    align-items: center;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    box-shadow: 0 0 10px #ff0080;   
+    cursor: pointer;
+    transition: .5s;
+}
+
+.popup .buttons .info-button:nth-child(1){
+    background:transparent ;
+    color:#fd038d;
+}
+
+.popup .buttons .info-button:nth-child(1):hover{
+    background:#fd038d ;
+    color:#fff;
+}
+
+.popup .buttons .info-button:nth-child(2):hover{
+    background:#70023e;
+    border-color:#ffffff;
+}
+
+/*-----------------------------
+-------Quiz Section CSS-----------
+-------------------------------*/
+.quiz-section{
+    width: 100%;
+    background: rgb(5, 0, 39);
+    position: relative;
+    left: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s ease-in-out;
+    z-index: 100;
+} 
+
+.quiz-section.active{
+    left: 0;
+}
+
+.quiz-section .quiz-box{
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border:2px solid #fafafa;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+    transition: .3s ease;
+    transition-delay: 0s;
+}
+
+.quiz-section .quiz-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+
+.quiz-box h1{
+    font-size: 32px;
+    text-align: center;
+    background: linear-gradient(45deg,transparent,#fd038d,transparent);
+    border-radius: 6px;
+}
+
+.quiz-box .quiz-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #fd038d;
+    margin-bottom: 20px;
+}
+
+
+.quiz-header span{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.quiz-header .header-score{
+    background: #ff0080;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.quiz-box .question-text{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.option-list .option{
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .2);
+    border-radius: 4px;
+    font-size: 17;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.option-list .option:hover{
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.option-list .option.Correct{
+    background: black;
+    color: green;
+    border-color: green;
+}
+
+.option-list .option.Incorrect{
+    background: black;
+    color: rgb(128, 0, 0);
+    border-color: rgb(128, 0, 0);
+}
+
+.option-list .option.Disabled{
+    pointer-events: none;
+}
+
+.quiz-box .quiz-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top:2px solid#ff0080;;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.quiz-footer .question-total{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.quiz-footer .next-button{
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+    background: #47313c;
+    border-radius: 6px;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fafafa;
+    cursor: pointer;   
+    transition: .3s;
+    pointer-events: none;
+
+}
+
+
+.quiz-footer .next-button.active{
+    pointer-events: auto;
+    background: #aa025e;
+    border-color: #aa025e;
+    color: #fafafa;
+}
+
+
+.quiz-footer .next-button.active:hover{
+    background: #aa025e;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+/*-----------------------------------
+----------Results Box CSS------------
+------------------------------------*/
+
+.results-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    background: transparent;
+    border: 2px solid #fd038d;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.results-box.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.results-box h2{
+    font-size: 52px;
+}
+
+.results-box .percentage-container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px
+}
+
+.results-box .circular-progress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(#aa025e 3.6deg, rgba(255, 255, 255, .1)0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.results-box .circular-progress::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background:rgb(5, 0, 39);
+    border-radius: 50%;
+    align-self: center;
+}
+
+.results-box .progress-value{
+    position: relative;
+    font-size: 25px;
+    align-self: center;
+    font-weight: 700;
+}
+
+.results-box .buttons{
+    display: flex;
+    
+}
+
+.percentage-container.score-text{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.buttons button{
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    background: #ff0080;
+    border-radius: 6px;
+    border: 2px solid #ff0080;
+    outline: none;
+    align-items: center;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    box-shadow: 0 0 10px #ff0080;   
+    cursor: pointer;
+    transition: .5s;
+    margin: 0 20px;
+    
+}
+
+.buttons button:nth-child(1):hover {
+    background: #3a0120;
+    color: #ffffff;
+}
+
+.buttons button:nth-child(2){
+    background: transparent;
+    color: #fd038d;
+}
+
+.buttons button:nth-child(2):hover {
+    background: #fd038d;
+    color: #ffffff;
+}
